@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html" charset=utf-8/>
-    <title>CAD Projects List</title>
+    <title>Create a new project</title>
     <style type="text/css">
         .auto-style1 {
             height: 20px;
@@ -2057,7 +2057,7 @@
     <form id="form1" runat="server" aria-orientation="horizontal">
         <div>
             <asp:HiddenField ID="hfContactID" runat="server" />
-            <img src="img/1000.png" width="150" />
+            <img src="img/1000.png" height="40" />
                     
         </div>
         <table id="2052">
@@ -2292,18 +2292,36 @@
                 <td colspan="2">                   
                     <asp:DropDownList ID="txtshijian1" runat="server">
                         <asp:ListItem Text=" " Value=" "></asp:ListItem>
-                       <asp:ListItem Text="2018" Value="2018"></asp:ListItem>
-                       <asp:ListItem Text="2019" Value="2019"></asp:ListItem>
-                       <asp:ListItem Text="2020" Value="2020"></asp:ListItem>
-                       <asp:ListItem Text="2020+" Value="2020+"></asp:ListItem>
-                    </asp:DropDownList>                   
-                    <asp:DropDownList ID="txtshijian2" runat="server">
-                        <asp:ListItem Text=" " Value=" "></asp:ListItem>
-                       <asp:ListItem Text="Q1" Value="Q1"></asp:ListItem>
-                       <asp:ListItem Text="Q2" Value="Q2"></asp:ListItem>
-                       <asp:ListItem Text="Q3" Value="Q3"></asp:ListItem>
-                       <asp:ListItem Text="Q4" Value="Q4"></asp:ListItem>
-                    </asp:DropDownList>                   
+                        <asp:ListItem Text="2018 Q4" Value="2018 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q1" Value="2019 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q2" Value="2019 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q3" Value="2019 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q4" Value="2019 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q1" Value="2020 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q2" Value="2020 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q3" Value="2020 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q4" Value="2020 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q1" Value="2021 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q2" Value="2021 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q3" Value="2021 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q4" Value="2021 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q1" Value="2022 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q2" Value="2022 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q3" Value="2022 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q4" Value="2022 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q1" Value="2023 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q2" Value="2023 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q3" Value="2023 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q4" Value="2023 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q1" Value="2024 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q2" Value="2024 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q3" Value="2024 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q4" Value="2024 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q1" Value="2025 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q2" Value="2025 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q3" Value="2025 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q4" Value="2025 Q4"></asp:ListItem>
+                    </asp:DropDownList>                                    
                 </td>
             </tr>
 
@@ -2322,25 +2340,36 @@
                 <td colspan="2">                   
                     <asp:DropDownList ID="txtgengxin1" runat="server">
                         <asp:ListItem Text=" " Value=" "></asp:ListItem>
-                       <asp:ListItem Text="2018" Value="2018"></asp:ListItem>
-                       <asp:ListItem Text="2019" Value="2019"></asp:ListItem>
-                       <asp:ListItem Text="2020" Value="2020"></asp:ListItem>
-                    </asp:DropDownList>                   
-                    <asp:DropDownList ID="txtgengxin2" runat="server">
-                        <asp:ListItem Text=" " Value=" "></asp:ListItem>
-                       <asp:ListItem Text="Jan" Value="Jan"></asp:ListItem>
-                       <asp:ListItem Text="Feb" Value="Feb"></asp:ListItem>
-                       <asp:ListItem Text="Mar" Value="Mar"></asp:ListItem>
-                       <asp:ListItem Text="Apr" Value="Apr"></asp:ListItem>
-                       <asp:ListItem Text="May" Value="May"></asp:ListItem>
-                       <asp:ListItem Text="Jun" Value="Jun"></asp:ListItem>
-                       <asp:ListItem Text="Jul" Value="Jul"></asp:ListItem>
-                       <asp:ListItem Text="Aug" Value="Aug"></asp:ListItem>
-                       <asp:ListItem Text="Sep" Value="Sep"></asp:ListItem>
-                       <asp:ListItem Text="Oct" Value="Oct"></asp:ListItem>
-                       <asp:ListItem Text="Nov" Value="Nov"></asp:ListItem>
-                       <asp:ListItem Text="Dec" Value="Dec"></asp:ListItem>
-                    </asp:DropDownList>                   
+                       <asp:ListItem Text="2018 Q4" Value="2018 Q4"></asp:ListItem>
+                       <asp:ListItem Text="2019 Q1" Value="2019 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q2" Value="2019 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q3" Value="2019 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2019 Q4" Value="2019 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q1" Value="2020 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q2" Value="2020 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q3" Value="2020 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2020 Q4" Value="2020 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q1" Value="2021 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q2" Value="2021 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q3" Value="2021 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2021 Q4" Value="2021 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q1" Value="2022 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q2" Value="2022 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q3" Value="2022 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2022 Q4" Value="2022 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q1" Value="2023 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q2" Value="2023 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q3" Value="2023 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2023 Q4" Value="2023 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q1" Value="2024 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q2" Value="2024 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q3" Value="2024 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2024 Q4" Value="2024 Q4"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q1" Value="2025 Q1"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q2" Value="2025 Q2"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q3" Value="2025 Q3"></asp:ListItem>
+                        <asp:ListItem Text="2025 Q4" Value="2025 Q4"></asp:ListItem>
+                    </asp:DropDownList>                                    
                 </td>
             </tr>
 
@@ -2796,17 +2825,10 @@
                 <asp:BoundField DataField="lilv"   HeaderText="毛利率"    />
                 <asp:BoundField DataField="nanyi"   HeaderText="难易程度"   />
                 <asp:BoundField DataField="fuwu"   HeaderText="谁来做服务" />
-                <asp:BoundField DataField="shijian1"    HeaderText="预计上市时间（年）" />
-                <asp:BoundField DataField="shijian2"  HeaderText="预计上市时间（季度）"   />
+                <asp:BoundField DataField="shijian1"    HeaderText="预计上市时间" />
                 <asp:BoundField DataField="fuzeren"   HeaderText="项目负责人"  />
-                <asp:BoundField DataField="gengxin1"   HeaderText="更新时间（年）"  />
-                <asp:BoundField DataField="gengxin2"  HeaderText="更新时间（月）"  />
-                <asp:BoundField DataField="beizhu"  HeaderText="备注：填写N/A都要写备注" />
-                <asp:TemplateField>
-                    <ItemTemplate>
-                        <asp:Button ID="lnkDelete" runat="server" OnClick="lnkDelete_Click"  CommandArgument='<%# Eval("ContactID") %>' Text="删除" OnClientClick="return confirm('是否确认删除')" />
-                    </ItemTemplate>   
-                </asp:TemplateField>                               
+                <asp:BoundField DataField="gengxin1"   HeaderText="更新时间"  />
+                <asp:BoundField DataField="beizhu"  HeaderText="备注：填写N/A都要写备注" />                             
             </Columns>
             <HeaderStyle Font-Size="12px" HorizontalAlign="Center" />
             <RowStyle HorizontalAlign="Center" />

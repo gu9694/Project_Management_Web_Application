@@ -17,10 +17,13 @@
         <table>           
             <tr>
                 <td>
-                    <img src="img/7453.jpg" width="250" />
+                    <img src="img/1000.png"  width="250" />
                 </td>
             </tr>
         </table>
+        <br />
+        <br />
+        <br />
         <table>
             <tr>
                 <td colspan="2">
@@ -37,17 +40,9 @@
                 <td><asp:TextBox ID="txtpassword" runat="server" TextMode="Password" Width="200"></asp:TextBox></td>
             </tr>
         </table>
-        <table><tr></tr><tr></tr><tr></tr></table>
         <p>
             <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click"  />
         </p>
-        <p>
-            <asp:Label ID="lblMsg" runat="server"></asp:Label>
-        </p>
-        <p>
-            &nbsp;</p>
-        <div>
-        </div>
     </form>
 </body>
 </html>

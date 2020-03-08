@@ -10,12 +10,15 @@ using System.Configuration;
 
 public partial class Contact : System.Web.UI.Page
 {
+    /* 连接数据库 */
     SqlConnection sqlCon = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ASPCRUD;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
+    /* 加载页面 */
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
         {
+            /* 填充表格
+             * 将firstpage.aspx中指定要编辑的项目中的内容，传送到文页面的各个文本框中*/
             FillGridView();
             bingridview();
             string IDc; IDc = Session["IDc"].ToString();
@@ -34,10 +37,8 @@ public partial class Contact : System.Web.UI.Page
             string nanyic; nanyic = Session["nanyic"].ToString();
             string fuwuc; fuwuc = Session["fuwuc"].ToString();
             string shijian1c; shijian1c = Session["shijian1c"].ToString();
-            string shijian2c; shijian2c = Session["shijian2c"].ToString();
             string fuzerenc; fuzerenc = Session["fuzerenc"].ToString();
             string gengxin1c; gengxin1c = Session["gengxin1c"].ToString();
-            string gengxin2c; gengxin2c = Session["gengxin2c"].ToString();
             string beizhuc; beizhuc = Session["beizhuc"].ToString();
             string ddp1c; ddp1c = Session["ddp1c"].ToString();
             string ddp2c; ddp2c = Session["ddp2c"].ToString();
@@ -66,10 +67,8 @@ public partial class Contact : System.Web.UI.Page
             txtnanyi.Text = nanyic;
             txtfuwu.Text = fuwuc;
             txtshijian1.Text = shijian1c;
-            txtshijian2.Text = shijian2c;
             txtfuzeren.Text = fuzerenc;
             txtgengxin1.Text = gengxin1c;
-            txtgengxin2.Text = gengxin2c;
             txtbeizhu.Text = beizhuc;
             txtddp1.Text = ddp1c;
             txtddp2.Text = ddp2c;
@@ -86,11 +85,13 @@ public partial class Contact : System.Web.UI.Page
             btnDelete.Enabled = true;
         }     
     }
-    /* 初始化主页面 */
+
+    /* 清空主页面
+     * 使主页面信息均为空白*/
     public void clear()
     {
         hfContactID.Value = "";
-        txtbumen.Text = txtjieduan.Text=txtleixing.Text=txtdujia.Text=txtxin.Text=txtdapei.Text=txtdiyinian.Text=txtqianwunian.Text=txtlilv.Text=txtnanyi.Text=txtfuwu.Text=txtshijian1.Text=txtshijian2.Text= txtgengxin1.Text = txtgengxin2.Text = " ";
+        txtbumen.Text = txtjieduan.Text=txtleixing.Text=txtdujia.Text=txtxin.Text=txtdapei.Text=txtdiyinian.Text=txtqianwunian.Text=txtlilv.Text=txtnanyi.Text=txtfuwu.Text=txtshijian1.Text= txtgengxin1.Text =  " ";
         txtxiangmu.Text = txtchanpin.Text = txtfuzeren.Text = txtbeizhu.Text = "";
         txtrww.Text = "";
         txtfs.Text = "900";
@@ -98,7 +99,9 @@ public partial class Contact : System.Web.UI.Page
         btnSave.Text = "更新该项目";
         btnDelete.Enabled = false;
     }
-    /* 提交项目、更新项目 */
+    
+    /* 更新项目
+     * 点此按钮后更新该项目的信息，将重新编辑的该项目的内容写入数据库中*/
     protected void btnSave_Click(object sender, EventArgs e)
     {
         if (sqlCon.State == System.Data.ConnectionState.Closed)
@@ -121,10 +124,8 @@ public partial class Contact : System.Web.UI.Page
         sqlCmd.Parameters.AddWithValue("nanyi", txtnanyi.Text.Trim());
         sqlCmd.Parameters.AddWithValue("fuwu", txtfuwu.Text.Trim());
         sqlCmd.Parameters.AddWithValue("shijian1", txtshijian1.Text.Trim());
-        sqlCmd.Parameters.AddWithValue("shijian2", txtshijian2.Text.Trim());
         sqlCmd.Parameters.AddWithValue("fuzeren", txtfuzeren.Text.Trim());
         sqlCmd.Parameters.AddWithValue("gengxin1", txtgengxin1.Text.Trim());
-        sqlCmd.Parameters.AddWithValue("gengxin2", txtgengxin2.Text.Trim());
         sqlCmd.Parameters.AddWithValue("beizhu", txtbeizhu.Text.Trim());
         sqlCmd.Parameters.AddWithValue("ddp1", txtddp1.Text.Trim());
         sqlCmd.Parameters.AddWithValue("ddp2", txtddp2.Text.Trim());
@@ -151,7 +152,9 @@ public partial class Contact : System.Web.UI.Page
         }
         FillGridView();
     }
-    /* 填充gridview */
+
+    /* 填充gridview
+     * 该函数附属于“提交项目”功能*/
     void FillGridView()
     {
         if (sqlCon.State == System.Data.ConnectionState.Closed)
@@ -162,7 +165,9 @@ public partial class Contact : System.Web.UI.Page
         sqlDa.Fill(dtbl);
         sqlCon.Close();
     }
-    /* 删除项目（在创建新的项目页面） */
+    
+    /* 删除项目
+     * 删除该被选中的项目 */
     protected void btnDelete_Click(object sender, EventArgs e)
     {
         if (sqlCon.State == System.Data.ConnectionState.Closed)
@@ -177,25 +182,30 @@ public partial class Contact : System.Web.UI.Page
         Response.Write("<script>alert('删除成功');location.href='firstpage.aspx';</script>");
 
     }
-    /* 回到首页（创建新的项目页面） */
+
+    /* 回到首页
+     * 回到firstpage.aspx */
     protected void btnExit_Click(object sender, EventArgs e)
     {
         Response.Redirect("firstpage.aspx");
     }
+
+    /* RWW分数编辑
+     * 点击此按钮后，跳转到编辑RWW分数的部分 */
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Write("<script>location.href='Contact_yiyou.aspx#rww';</script>");
     }
-    /* 生成分数按钮 */
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-    }
-    /* 保存该项目（没啥用） */
+
+    /* 保存该项目
+     * 点击此按钮后，保存已填写的信息，仍停留在现有页面，继续编辑新的项目 */
     protected void Button3_Click(object sender, EventArgs e)
     {
         Response.Write("<script>alert('保存成功,请继续编辑');</script>");
     }
-    /* gridview各个项目排序 */
+
+    /* 排序功能
+     * gridview各个项目排序（没用） */
     protected void gvContact_Sorting(object sender, GridViewSortEventArgs e)
     {
         string sortExp = e.SortExpression;
@@ -252,66 +262,9 @@ public partial class Contact : System.Web.UI.Page
         return ds.Tables[0];
 
     }
-    /* 删除项目（查看已有项目页面） */
-    protected void lnkDelete_Click(object sender, EventArgs e)
-    {
-        int contactID = Convert.ToInt32((sender as Button).CommandArgument);
-        sqlCon.Open();
-        SqlDataAdapter sqlDa = new SqlDataAdapter("ContactViewByID", sqlCon);
-        sqlDa.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
-        sqlDa.SelectCommand.Parameters.AddWithValue("@ContactID", contactID);
-        DataTable dtbl = new DataTable();
-        sqlDa.Fill(dtbl);
-        sqlCon.Close();
-        hfContactID.Value = contactID.ToString();
-        txtbumen.Text = dtbl.Rows[0]["bumen"].ToString();
-        txtxiangmu.Text = dtbl.Rows[0]["xiangmu"].ToString();
-        txtchanpin.Text = dtbl.Rows[0]["chanpin"].ToString();
-        txtrww.Text = dtbl.Rows[0]["rww"].ToString();
-        txtjieduan.Text = dtbl.Rows[0]["jieduan"].ToString();
-        txtleixing.Text = dtbl.Rows[0]["leixing"].ToString();
-        txtdujia.Text = dtbl.Rows[0]["dujia"].ToString();
-        txtxin.Text = dtbl.Rows[0]["xin"].ToString();
-        txtdapei.Text = dtbl.Rows[0]["dapei"].ToString();
-        txtdiyinian.Text = dtbl.Rows[0]["diyinian"].ToString();
-        txtqianwunian.Text = dtbl.Rows[0]["qianwunian"].ToString();
-        txtlilv.Text = dtbl.Rows[0]["lilv"].ToString();
-        txtnanyi.Text = dtbl.Rows[0]["nanyi"].ToString();
-        txtfuwu.Text = dtbl.Rows[0]["fuwu"].ToString();
-        txtshijian1.Text = dtbl.Rows[0]["shijian1"].ToString();
-        txtshijian2.Text = dtbl.Rows[0]["shijian2"].ToString();
-        txtfuzeren.Text = dtbl.Rows[0]["fuzeren"].ToString();
-        txtgengxin1.Text = dtbl.Rows[0]["gengxin1"].ToString();
-        txtgengxin2.Text = dtbl.Rows[0]["gengxin2"].ToString();
-        txtbeizhu.Text = dtbl.Rows[0]["beizhu"].ToString();
-        txtddp1.Text = dtbl.Rows[0]["ddp1"].ToString();
-        txtddp2.Text = dtbl.Rows[0]["ddp2"].ToString();
-        txtddp3.Text = dtbl.Rows[0]["ddp3"].ToString();
-        txtddp4.Text = dtbl.Rows[0]["ddp4"].ToString();
-        txtddp5.Text = dtbl.Rows[0]["ddp5"].ToString();
-        txtddp6.Text = dtbl.Rows[0]["ddp6"].ToString();
-        txtddp7.Text = dtbl.Rows[0]["ddp7"].ToString();
-        txtddp8.Text = dtbl.Rows[0]["ddp8"].ToString();
-        txtddp9.Text = dtbl.Rows[0]["ddp9"].ToString();
-        txtddp10.Text = dtbl.Rows[0]["ddp10"].ToString();
-        txtfs.Text = dtbl.Rows[0]["fs"].ToString();
-        if (sqlCon.State == System.Data.ConnectionState.Closed)
-            sqlCon.Open();
-        SqlCommand sqlCmd = new SqlCommand("ContactDeleteByID", sqlCon);
-        sqlCmd.CommandType = CommandType.StoredProcedure;
-        sqlCmd.Parameters.AddWithValue("@ContactID", Convert.ToInt32(hfContactID.Value));
-        sqlCmd.ExecuteNonQuery();
-        sqlCon.Close();
-        clear();
-        FillGridView();
-        Response.Write("<script>alert('删除成功');location.href='firstpage.aspx';</script>");
-    }
-
-    protected void TextBox2_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
+  
+    /* 生成RWW分数
+     * 点击此按钮后，自动计算RWW分数，并跳转到填写该项目信息的主页面上，RWW分数自动写入对应的文本框中*/
     protected void Button4_Click(object sender, EventArgs e)
     {
         int i1 = int.Parse(txtddp1.SelectedValue.ToString());
@@ -330,4 +283,5 @@ public partial class Contact : System.Web.UI.Page
         this.txtrww.Text = result.ToString();
         Response.Write("<script>alert('RWW分数更新成功！');</script>");
     }
+
 }

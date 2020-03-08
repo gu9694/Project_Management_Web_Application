@@ -9,14 +9,11 @@ using System.Data;
 using System.Configuration;
 public partial class login : System.Web.UI.Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
         
     }
-
-
-
+/* 登录按钮 */
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         using (SqlConnection sqlCon = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
@@ -30,7 +27,7 @@ public partial class login : System.Web.UI.Page
             if(count==1)
             {
                 Session["username"] = txtusername.Text.Trim();
-                Response.Redirect("firstpage.aspx");
+                Response.Write("<script>alert('登录成功');location.href='firstpage.aspx';</script>");
             }
             else
             {
@@ -38,4 +35,5 @@ public partial class login : System.Web.UI.Page
             }
         }
     }
+
 }
